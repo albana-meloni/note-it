@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1080 1080" style="enable-background:new 0 0 1080 1080;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#00CC00;}
+	.st2{fill:#00CC00;stroke:#000000;stroke-width:9;stroke-miterlimit:10;}
+</style>
+<g>
+	<rect x="2.5" y="2.5" class="st0" width="1075" height="1075"/>
+	<path d="M1075,5v1070H5V5H1075 M1080,0H0v1080h1080V0L1080,0z"/>
+</g>
+<g>
+	<g>
+		<g>
+			<rect x="166.75" y="199" class="st1" width="117" height="117"/>
+			<path d="M279.25,203.5v108h-108v-108H279.25 M288.25,194.5h-126v126h126V194.5L288.25,194.5z"/>
+		</g>
+		<g>
+			<rect x="166.75" y="481.5" class="st1" width="117" height="117"/>
+			<path d="M279.25,486v108h-108V486H279.25 M288.25,477h-126v126h126V477L288.25,477z"/>
+		</g>
+		<g>
+			<rect x="166.75" y="764" class="st1" width="117" height="117"/>
+			<path d="M279.25,768.5v108h-108v-108H279.25 M288.25,759.5h-126v126h126V759.5L288.25,759.5z"/>
+		</g>
+	</g>
+	<rect x="336.75" y="220.5" class="st2" width="581" height="75"/>
+	<rect x="336.75" y="502.5" class="st2" width="581" height="75"/>
+	<rect x="336.75" y="784.5" class="st2" width="581" height="75"/>
+</g>
+</svg>

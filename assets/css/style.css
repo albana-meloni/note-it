@@ -1,0 +1,214 @@
+
+
+/* ---- CUSTOM ---- */
+.container {
+  background-color: hsla(0, 0%, 100%, 0.9);
+  backdrop-filter: blur(3px);
+  box-shadow: 0 0 1em hsla(0, 0%, 0%, 0.3);
+  margin: 1.5rem;
+  padding: 1rem;
+  height: calc(100vh - 4rem);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+}
+.container h1 {
+  font-size: 2.3rem;
+}
+.btn {
+  cursor: pointer;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+}
+.btn:hover,
+.btn:focus {
+  color: var(--acento);
+}
+#tasks .btn {
+  width: 100%;
+  display: inline-block;
+}
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.heading img {
+  width: 2rem;
+}
+hr {
+  height: 1px;
+  width: 100%;
+  background-color: var(--gris-claro);
+  margin: 1rem 0;
+}
+
+
+/* ---- NOTAS ---- */
+.container-notes {
+  overflow: scroll;
+  width: 100%;
+  height: calc(100% - 7.5rem);
+}
+.container-notes::-webkit-scrollbar {
+  display: none;
+}
+.note {
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: var(--blanco-oscuro);
+  padding: 0.5rem;
+}
+.note span {
+  color:var(--acento);
+  font-size: 1rem;
+}
+.note-title {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.note-body {
+  font-size: 13px;
+  color: var(--gris);
+  margin: 1rem 0;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.note-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.note-bottom small {
+  font-size: 10px;
+  color: var(--acento);
+  cursor: pointer;
+}
+.note-bottom small:not([class]) {
+  color: #000;
+  cursor: default;
+}
+
+
+/* ---- MODAL NOTAS ---- */
+.modal-note {
+  height: 80vh;
+  width: 80vw;
+  margin: 10vh 10vw;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+  background-color: #fff;
+  border: 2px solid #000;
+  box-shadow: 0 0 0 500px rgba(0,0,0,0.8);
+
+  transition: all 500ms ease;
+  opacity: 1;
+}
+.modal-note div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.modal-note small {
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+
+/* ---- CREAR NOTA INPUTS ---- */
+.container-inputs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.input {
+  width: 100%;
+  margin: 0 auto 1rem;
+  background-color: transparent;
+  border: 0;
+  resize: none;
+  border-bottom: var(--gris-claro) 1.5px solid;
+}
+.input::placeholder {
+  font-style: italic;
+  font-size: 0.8rem;
+}
+.input:focus {
+  outline: none;
+  color: var(--acento);
+}
+#crearNota {
+  width: 100%;
+}
+
+
+
+
+/* ---- CARPETAS ---- */
+.container-folders {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  overflow: scroll;
+  height: calc(100% - 7.5rem);
+  padding: 5px 0 0;
+}
+.container-folders::-webkit-scrollbar {
+  display: none;
+}
+.folder {
+  background-color: var(--gris-claro);
+  color: var(--acento);
+  width: 110px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 0.9rem;
+}
+.folder::after {
+  content: '';
+  width: 20px;
+  height: 5px;
+  background-color: var(--acento);
+  position: absolute;
+  top: -5px;
+  right: 0;
+}
+
+/* ---- CARPETAS INPUTS ---- */
+.container-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container-btn form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.container-btn > form > input {
+  width: 100%;
+  margin-right: 20px;
+  border: 1px var(--gris-claro) solid;
+}
