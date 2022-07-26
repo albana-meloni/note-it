@@ -4,7 +4,7 @@
 }
 ::selection {
   background-color: map-get($colores, negro);
-  color: map-get($map: colores, $key: acento);
+  color: map-get($colores, acento);
 }
 *,
 *::before,

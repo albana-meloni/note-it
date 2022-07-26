@@ -4,36 +4,30 @@ let inputUsuarioRegistro = document.querySelector("#registro-usuario");
 let inputContrasenaRegistro = document.querySelector("#registro-contrasena");
 
 let usuarios = [];
-let idUsuario = Math.floor(Math.random() * 1000000);
 
 class Usuario {
-  constructor (nombre, contrasena) {
+  constructor (id, nombre, contrasena) {
+    this.id = id;
     this.nombre = nombre;
     this.contrasena = contrasena;
   }
 }
 
-inputContrasenaRegistro.addEventListener("onclick", ()=> {
-  
-});
 
-formRegistro.addEventListener("submit", function(e, usuarioACrear){
+formRegistro.addEventListener("submit", function(e){
   e.preventDefault();
-  let existe = usuarios.find(user => user.nombre == usuarioACrear.nombre);
-
+  const usuarioNuevo = new Usuario(Math.floor(Math.random() * 1000), inputUsuarioRegistro.value, inputContrasenaRegistro.value);
+  let existe = usuarios.find(user => user.nombre == usuarioNuevo.nombre);
   if (existe) {
-    alert("Este usuario ya existe.");
+    alert("Este nombre de usuario ya existe, intente con otro.");
   } else {
-    const usuarioNuevo = new Usuario(inputUsuarioRegistro.value, inputContrasenaRegistro.value);
+    console.log(usuarioNuevo);
     usuarios.push(usuarioNuevo);
     console.log(usuarios);
-    localStorage.setItem("usuario", JSON.stringify(usuarioNuevo));
+    localStorage.setItem(`usuario ${usuarioNuevo.id}`, JSON.stringify(usuarioNuevo));
     alert("Se creó el usuario, inicie sesión.");
   }
 });
-
-
-
 
 
 // inicio sesión
@@ -41,11 +35,15 @@ let formSesion = document.querySelector("#sesion");
 let inputUsuarioSesion = document.querySelector("#sesion-usuario");
 let inputContrasenaSesion = document.querySelector("#sesion-contrasena");
 
-function abrirUsuario() {
-  let usuarioCreado = localStorage.getItem(usuarioNuevo);
-  if (usuarioCreado == true) {
-    window.location = "./index.html";
-  } else {
-    alert("no funciona bro");
+formSesion.addEventListener("submit", function(e){
+  e.preventDefault();
+  for (let i = 0; i <= localStorage.length; i++) {
+    let usuario = localStorage.key(i);
+    let usuarioObjeto = JSON.parse(localStorage.getItem(usuario));
+    console.log(usuarioObjeto.nombre);
+    console.log(usuarioObjeto.contrasena);
+    if (inputUsuarioSesion.value === usuarioObjeto.nombre && inputContrasenaSesion.value === usuarioObjeto.contrasena) {
+      window.location = "notas.html";
+    }
   }
-}
+});
