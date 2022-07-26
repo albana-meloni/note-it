@@ -29,7 +29,6 @@ html {
   min-height: 100vh; }
 
 body {
-  min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: 'OCRA';
@@ -69,6 +68,7 @@ select {
     font-size: 2.3rem; }
   .container .heading {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     width: 100%; }
@@ -90,3 +90,143 @@ select {
 #tasks .btn {
   width: 100%;
   display: inline-block; }
+
+.container-notes {
+  overflow: scroll;
+  width: 100%;
+  height: calc(100% - 7.5rem); }
+  .container-notes::-webkit-scrollbar {
+    display: none; }
+  .container-notes .note {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: #f5f5f5;
+    padding: 0.5rem; }
+    .container-notes .note span {
+      color: #00cc00;
+      font-size: 1rem; }
+    .container-notes .note .note-title {
+      font-size: 15px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around; }
+    .container-notes .note .note-body {
+      font-size: 13px;
+      color: #555555;
+      margin: 1rem 0;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+    .container-notes .note .note-bottom {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between; }
+      .container-notes .note .note-bottom small {
+        font-size: 10px;
+        color: #00cc00;
+        cursor: pointer; }
+        .container-notes .note .note-bottom small:not([class]) {
+          color: #000000;
+          cursor: default; }
+
+.modal-note {
+  height: 80vh;
+  width: 80vw;
+  margin: 10vh 10vw;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  box-shadow: 0 0 0 500px rgba(0, 0, 0, 0.8);
+  transition: all 500ms ease;
+  opacity: 1; }
+  .modal-note div {
+    display: flex;
+    flex-direction: row;
+    align-items: normal;
+    justify-content: space-between;
+    width: 100%; }
+  .modal-note small {
+    cursor: pointer;
+    font-size: 1.2rem; }
+
+/* crear nota */
+.container-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  justify-content: normal;
+  width: 100%;
+  height: 100%; }
+  .container-inputs .input {
+    width: 100%;
+    margin: 0 auto 1rem;
+    background-color: transparent;
+    border: 0;
+    resize: none;
+    border-bottom: var(--gris-claro) 1.5px solid; }
+    .container-inputs .inputa::placeholder {
+      font-style: italic;
+      font-size: 0.8rem; }
+    .container-inputs .input:focus {
+      outline: none;
+      color: var(--acento); }
+
+form#crearNota {
+  width: 100%; }
+
+.container-folders {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  overflow: scroll;
+  height: calc(100% - 7.5rem);
+  padding: 5px 0 0; }
+  .container-folders::-webkit-scrollbar {
+    display: none; }
+  .container-folders .folder {
+    background-color: #777777;
+    color: #00cc00;
+    width: 110px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 0.9rem; }
+    .container-folders .folder::after {
+      content: '';
+      width: 20px;
+      height: 5px;
+      background-color: #00cc00;
+      position: absolute;
+      top: -5px;
+      right: 0; }
+
+/* crear carpeta */
+.container-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .container-btn > form {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center; }
+    .container-btn > form > input {
+      width: 100%;
+      margin-right: 20px;
+      border: 1px solid #777777; }

@@ -1,0 +1,42 @@
+.container-folders {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  overflow: scroll;
+  height: calc(100% - 7.5rem);
+  padding: 5px 0 0;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .folder {
+    background-color: map-get($colores, gris-claro);
+    color: map-get($colores, acento);
+    width: 110px;
+    height: 50px;
+    @include flex(row, center, center);
+    position: relative;
+    font-size: 0.9rem;
+    &::after {
+      content: '';
+      width: 20px;
+      height: 5px;
+      background-color: map-get($colores, acento);
+      position: absolute;
+      top: -5px;
+      right: 0;
+    }
+  }
+}
+
+/* crear carpeta */
+.container-btn {
+  @include flex(column, center, center);
+  & > form {
+    @include flex(row, flex-start, center);
+    & > input {
+      width: 100%;
+      margin-right: 20px;
+      border: 1px solid map-get($colores, gris-claro);
+    }
+  }
+}

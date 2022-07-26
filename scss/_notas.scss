@@ -1,0 +1,95 @@
+.container-notes {
+  overflow: scroll;
+  width: 100%;
+  height: calc(100% - 7.5rem);
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .note {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: map-get($colores, blanco-oscuro);
+    padding: 0.5rem;
+    span {
+      color: map-get($colores, acento);
+      font-size: 1rem;
+    }
+    .note-title {
+      font-size: 15px;
+      @include flex(row, center, space-around);
+    }
+    .note-body {
+      font-size: 13px;
+      color: map-get($colores, gris);
+      margin: 1rem 0;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .note-bottom {
+      width: 100%;
+      @include flex(row, center, space-between);
+      small {
+        font-size: 10px;
+        color: map-get($colores, acento);
+        cursor: pointer;
+        &:not([class]) {
+          color: map-get($colores, negro);
+          cursor: default;
+        }
+      }
+    }
+  }
+}
+
+.modal-note {
+  height: 80vh;
+  width: 80vw;
+  margin: 10vh 10vw;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  @include flex(column, center, flex-start);
+  padding: 1rem;
+  background-color: map-get($colores, blanco);
+  border: 2px solid map-get($colores, negro);
+  box-shadow: 0 0 0 500px rgba(0,0,0,0.8);
+  transition: all 500ms ease;
+  opacity: 1;
+  div {
+    @include flex(row, normal, space-between);
+    width: 100%;
+  }
+  small {
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+}
+
+/* crear nota */
+.container-inputs {
+  @include flex(column, normal, normal);
+  width: 100%;
+  height: 100%;
+  .input {
+    width: 100%;
+    margin: 0 auto 1rem;
+    background-color: transparent;
+    border: 0;
+    resize: none;
+    border-bottom: var(--gris-claro) 1.5px solid;
+    &a::placeholder {
+      font-style: italic;
+      font-size: 0.8rem;
+    }
+    &:focus {
+      outline: none;
+      color: var(--acento);
+    }
+  }
+}
+form#crearNota {
+  width: 100%;
+}
