@@ -4,6 +4,8 @@ let inputUsuarioRegistro = document.querySelector("#registro-usuario");
 let inputContrasenaRegistro = document.querySelector("#registro-contrasena");
 
 let usuarios = [];
+let usersLS = JSON.parse(localStorage.getItem('usuarios')) || [];
+usersLS.forEach(element => usuarios.push(element));
 
 class Usuario {
   constructor (id, nombre, contrasena) {
@@ -12,7 +14,6 @@ class Usuario {
     this.contrasena = contrasena;
   }
 }
-
 
 formRegistro.addEventListener("submit", function(e){
   e.preventDefault();
@@ -24,11 +25,12 @@ formRegistro.addEventListener("submit", function(e){
     console.log(usuarioNuevo);
     usuarios.push(usuarioNuevo);
     console.log(usuarios);
-    localStorage.setItem(`usuario ${usuarioNuevo.id}`, JSON.stringify(usuarioNuevo));
+    localStorage.setItem(`usuarios`, JSON.stringify(usuarios));
     alert("Se creó el usuario, inicie sesión.");
+    inputUsuarioRegistro.value = "";
+    inputContrasenaRegistro.value = "";
   }
 });
-
 
 // inicio sesión
 let formSesion = document.querySelector("#sesion");
@@ -37,13 +39,9 @@ let inputContrasenaSesion = document.querySelector("#sesion-contrasena");
 
 formSesion.addEventListener("submit", function(e){
   e.preventDefault();
-  for (let i = 0; i <= localStorage.length; i++) {
-    let usuario = localStorage.key(i);
-    let usuarioObjeto = JSON.parse(localStorage.getItem(usuario));
-    console.log(usuarioObjeto.nombre);
-    console.log(usuarioObjeto.contrasena);
-    if (inputUsuarioSesion.value === usuarioObjeto.nombre && inputContrasenaSesion.value === usuarioObjeto.contrasena) {
-      window.location = "notas.html";
-    }
+  let usuarioObjeto = usuarios.find(item => item.nombre == inputUsuarioSesion.value);
+  if (inputUsuarioSesion.value === usuarioObjeto.nombre && inputContrasenaSesion.value === usuarioObjeto.contrasena){
+    sessionStorage.setItem("usuario activo", usuarioObjeto);
+    window.location = "notas.html";
   }
 });
