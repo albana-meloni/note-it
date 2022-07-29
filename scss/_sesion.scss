@@ -1,0 +1,35 @@
+form#registro,
+form#sesion {
+  @include flex(column, normal, center);
+  label {
+    margin-top: 0.5rem;
+    text-align: left;
+    font-size: 0.9rem;
+    input {
+      width: 100%;
+      margin: 0 auto 1rem;
+      background-color: transparent;
+      resize: none;
+      &a::placeholder {
+        font-style: italic;
+        font-size: 0.8rem;
+      }
+      &:focus {
+        outline: none;
+        color: map-get($colores, acento);
+      }
+    }
+  }
+  button {
+    margin-top: 1rem;
+  }
+}
+.container {
+  & > h2 {
+    font-size: 1.2rem;
+    & > span {
+      color: map-get($colores, acento);
+      font-size: 1rem;
+    }
+  }
+}

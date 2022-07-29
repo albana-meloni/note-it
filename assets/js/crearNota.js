@@ -1,5 +1,8 @@
+let usuarioJSON = JSON.parse(sessionStorage.getItem("usuario activo"));
+
+
 let notas = [];
-let notesLS = JSON.parse(sessionStorage.getItem('notas usuario')) || [];
+let notesLS = JSON.parse(localStorage.getItem(`notas de usuario #${usuarioJSON.id}`)) || [];
 notesLS.forEach(element => notas.push(element));
 
 class Nota {
@@ -16,6 +19,6 @@ crearNotaForm.addEventListener("submit", function (e) {
   let contenido = document.querySelector("#inputContenido").value;
   const notaNueva = new Nota(titulo, contenido);
   notas.push(notaNueva);
-  sessionStorage.setItem("notas usuario", JSON.stringify(notas));
+  localStorage.setItem(`notas de usuario #${usuarioJSON.id}`, JSON.stringify(notas));
   window.location = "notas.html";
 });

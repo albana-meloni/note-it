@@ -4,37 +4,37 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>nOte It | iniciar sesiOn</title>
+  <meta name="description" content="La app web para hacer las cosas más fáciles para los desarrolladores. No te pierdas de nada, organizate de la mejor manera ;)">
+  <title>nOte It | user</title>
   <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 <body>
   <div class="container">
-    <h2>Registrarse</h2>
-    <form id="registro">
-      <label for="registro-usuario">
-        Nombre de usuariO:
-        <input type="text" id="registro-usuario">
-      </label>
-      <label for="registro-contrasena">
-        Contraseña:
-        <input type="password" id="registro-contrasena">
-      </label>
-      <button type="submit" id="registro-btn">Registrarse</button>
-    </form>
-    <hr>
-    <h2>Iniciar SesiÓn</h2>
-    <form id="sesion">
-      <label for="sesion-usuario">
-        Nombre de usuariO:
-        <input type="text" id="sesion-usuario">
-      </label>
-      <label for="sesion-contrasena">
-        Contraseña:
-        <input type="password" id="sesion-contrasena">
-      </label>
-      <button type="submit" id="sesion-btn">Ingresar</button>
-    </form>
+    <div>
+      <div class="heading">
+        <div>
+          <a href="#"><img src="./assets/img/user.svg" alt="Imagen vectorial de usuario"></a>
+        </div>
+        <div>
+          <p>cOnfig usuariO</p>
+        </div>
+        <div>
+          <a href="./notas.html"><img src="./assets/img/notes.svg" alt="Imagen vectorial de carpeta"></a>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container-usuario">
+      <h3>Nombre de usuario: <span id="usuario-span"></span></h3>
+      <h3>ID: <span id="id-span"></span></h3>
+      <input type="email" id="email-input" placeholder="Agregar email">
+    </div>
+    <div class="bottom">
+      <hr>
+      <div class="btn">
+        <a href="./iniciar-sesion.html">!cerrar_sesiOn</a>
+      </div>
+    </div>
   </div>
-  <script src="./assets/js/sesion.js"></script>
 </body>
 </html>

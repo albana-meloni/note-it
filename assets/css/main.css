@@ -62,10 +62,12 @@ select {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   text-align: center; }
   .container h1 {
     font-size: 2.3rem; }
+  .container > div {
+    width: 100%; }
   .container .heading {
     display: flex;
     flex-direction: row;
@@ -166,7 +168,7 @@ select {
   display: flex;
   flex-direction: column;
   align-items: normal;
-  justify-content: normal;
+  justify-content: center;
   width: 100%;
   height: 100%; }
   .container-inputs .input {
@@ -175,16 +177,21 @@ select {
     background-color: transparent;
     border: 0;
     resize: none;
-    border-bottom: var(--gris-claro) 1.5px solid; }
-    .container-inputs .inputa::placeholder {
+    border-bottom: 1.5px solid #777777; }
+    .container-inputs .input::placeholder {
       font-style: italic;
       font-size: 0.8rem; }
     .container-inputs .input:focus {
       outline: none;
-      color: var(--acento); }
+      color: #00cc00; }
 
 form#crearNota {
-  width: 100%; }
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  justify-content: center;
+  width: 100%;
+  height: 100%; }
 
 .container-folders {
   display: grid;
@@ -196,8 +203,8 @@ form#crearNota {
   .container-folders::-webkit-scrollbar {
     display: none; }
   .container-folders .folder {
-    background-color: #777777;
-    color: #00cc00;
+    background-color: #555555;
+    color: #ffffff;
     width: 110px;
     height: 50px;
     display: flex;
@@ -230,3 +237,44 @@ form#crearNota {
       width: 100%;
       margin-right: 20px;
       border: 1px solid #777777; }
+
+form#registro,
+form#sesion {
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  justify-content: center; }
+  form#registro label,
+  form#sesion label {
+    margin-top: 0.5rem;
+    text-align: left;
+    font-size: 0.9rem; }
+    form#registro label input,
+    form#sesion label input {
+      width: 100%;
+      margin: 0 auto 1rem;
+      background-color: transparent;
+      resize: none; }
+      form#registro label inputa::placeholder,
+      form#sesion label inputa::placeholder {
+        font-style: italic;
+        font-size: 0.8rem; }
+      form#registro label input:focus,
+      form#sesion label input:focus {
+        outline: none;
+        color: #00cc00; }
+  form#registro button,
+  form#sesion button {
+    margin-top: 1rem; }
+
+.container > h2 {
+  font-size: 1.2rem; }
+  .container > h2 > span {
+    color: #00cc00;
+    font-size: 1rem; }
+
+.container-usuario {
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  justify-content: center; }

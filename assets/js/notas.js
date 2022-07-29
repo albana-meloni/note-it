@@ -1,15 +1,11 @@
 let titulo = document.querySelector("#user-title");
-let usuarioActivo = sessionStorage.getItem(sessionStorage.key("usuario activo"));
-titulo.innerHTML = "";
-titulo.innerHTML = `nOtas de ${usuarioActivo.nombre} <small>#${usuarioActivo.id}</small>`;
-
-
+titulo.innerHTML = `nOtas de <strong>${usuarioJSON.nombre}</strong><small>#${usuarioJSON.id}</small>`;
 
 /* cuando se crea una nota */
 const hoy = new Date();
 let containerNotas = document.querySelector(".container-notes");
-let arrayNotas = JSON.parse(sessionStorage.getItem("notas usuario"));
-arrayNotas.forEach((nota) => {
+
+notas.forEach((nota) => {
   let div = document.createElement("div");
   div.className = "note";
   div.innerHTML = `

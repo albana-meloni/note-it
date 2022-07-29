@@ -70,7 +70,7 @@
 
 /* crear nota */
 .container-inputs {
-  @include flex(column, normal, normal);
+  @include flex(column, normal, center);
   width: 100%;
   height: 100%;
   .input {
@@ -79,17 +79,19 @@
     background-color: transparent;
     border: 0;
     resize: none;
-    border-bottom: var(--gris-claro) 1.5px solid;
-    &a::placeholder {
+    border-bottom: 1.5px solid map-get($colores, gris-claro);
+    &::placeholder {
       font-style: italic;
       font-size: 0.8rem;
     }
     &:focus {
       outline: none;
-      color: var(--acento);
+      color: map-get($colores, acento);
     }
   }
 }
 form#crearNota {
+  @include flex(column, normal, center);
   width: 100%;
+  height: 100%;
 }

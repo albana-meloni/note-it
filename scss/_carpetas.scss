@@ -9,8 +9,8 @@
     display: none;
   }
   .folder {
-    background-color: map-get($colores, gris-claro);
-    color: map-get($colores, acento);
+    background-color: map-get($colores, gris);
+    color: map-get($colores, blanco);
     width: 110px;
     height: 50px;
     @include flex(row, center, center);

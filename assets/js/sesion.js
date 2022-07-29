@@ -26,6 +26,8 @@ formRegistro.addEventListener("submit", function(e){
     usuarios.push(usuarioNuevo);
     console.log(usuarios);
     localStorage.setItem(`usuarios`, JSON.stringify(usuarios));
+    inputUsuarioSesion.value = inputUsuarioRegistro.value;
+    inputContrasenaSesion.value = inputContrasenaRegistro.value;
     alert("Se creó el usuario, inicie sesión.");
     inputUsuarioRegistro.value = "";
     inputContrasenaRegistro.value = "";
@@ -40,8 +42,9 @@ let inputContrasenaSesion = document.querySelector("#sesion-contrasena");
 formSesion.addEventListener("submit", function(e){
   e.preventDefault();
   let usuarioObjeto = usuarios.find(item => item.nombre == inputUsuarioSesion.value);
+  let user = JSON.stringify(usuarioObjeto);
   if (inputUsuarioSesion.value === usuarioObjeto.nombre && inputContrasenaSesion.value === usuarioObjeto.contrasena){
-    sessionStorage.setItem("usuario activo", usuarioObjeto);
+    sessionStorage.setItem("usuario activo", user);
     window.location = "notas.html";
   }
 });
