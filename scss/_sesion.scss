@@ -10,7 +10,7 @@ form#sesion {
       margin: 0 auto 1rem;
       background-color: transparent;
       resize: none;
-      &a::placeholder {
+      &::placeholder {
         font-style: italic;
         font-size: 0.8rem;
       }

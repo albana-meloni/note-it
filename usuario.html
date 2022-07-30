@@ -25,9 +25,18 @@
       <hr>
     </div>
     <div class="container-usuario">
-      <h3>Nombre de usuario: <span id="usuario-span"></span></h3>
-      <h3>ID: <span id="id-span"></span></h3>
-      <input type="email" id="email-input" placeholder="Agregar email">
+      <p>Usuario: <span id="usuario-span"></span></p>
+    </div>
+    <div class="container-info">
+      <h3>Agrega tu email!</h3>
+      <p>¿Te gusta la app? Deja tu email debajo para recibir información sobre las últimas actualizaciones y a modo de <strong>back-up</strong>  para para tu cuenta y notas!</p>
+      <form id="email" action="#">
+        <input type="email" class="input" id="email-input" placeholder="user@example.com">
+        <button class="btn">agregar</button>
+      </form>
+    </div>
+    <div class="container-usuario">
+      <p>ID: <span id="id-span"></span></p>
     </div>
     <div class="bottom">
       <hr>
@@ -36,5 +45,6 @@
       </div>
     </div>
   </div>
+  <script src="./assets/js/usuario.js"></script>
 </body>
-</html>
+</html> 

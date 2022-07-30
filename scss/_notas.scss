@@ -74,22 +74,12 @@
   width: 100%;
   height: 100%;
   .input {
+    @extend .input;
     width: 100%;
     margin: 0 auto 1rem;
-    background-color: transparent;
-    border: 0;
-    resize: none;
-    border-bottom: 1.5px solid map-get($colores, gris-claro);
-    &::placeholder {
-      font-style: italic;
-      font-size: 0.8rem;
-    }
-    &:focus {
-      outline: none;
-      color: map-get($colores, acento);
-    }
   }
 }
+
 form#crearNota {
   @include flex(column, normal, center);
   width: 100%;

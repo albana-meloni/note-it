@@ -32,11 +32,12 @@
 .container-btn {
   @include flex(column, center, center);
   & > form {
-    @include flex(row, flex-start, center);
+      width: 100%;
+      @include flex(row, flex-start, center);
     & > input {
+      @extend .input;
       width: 100%;
       margin-right: 20px;
-      border: 1px solid map-get($colores, gris-claro);
     }
   }
 }

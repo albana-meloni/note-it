@@ -13,3 +13,18 @@ $colores:(
   align-items: $ai;
   justify-content: $jc;
 }
+
+.input {
+  background-color: transparent;
+  border: 0;
+  resize: none;
+  border-bottom: 1.5px solid map-get($colores, gris-claro);
+  &::placeholder {
+    font-style: italic;
+    font-size: 0.8rem;
+  }
+  &:focus {
+    outline: none;
+    color: map-get($colores, acento);
+  }
+}

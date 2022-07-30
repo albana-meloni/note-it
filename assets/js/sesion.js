@@ -15,22 +15,24 @@ class Usuario {
   }
 }
 
+function crearUsuario(usuario) {
+  usuarios.push(usuario);
+  localStorage.setItem(`usuarios`, JSON.stringify(usuarios));
+  inputUsuarioSesion.value = inputUsuarioRegistro.value;
+  inputContrasenaSesion.value = inputContrasenaRegistro.value;
+  alert("Se creó el usuario, inicie sesión.");
+  inputUsuarioRegistro.value = "";
+  inputContrasenaRegistro.value = "";
+}
+
 formRegistro.addEventListener("submit", function(e){
   e.preventDefault();
-  const usuarioNuevo = new Usuario(Math.floor(Math.random() * 1000), inputUsuarioRegistro.value, inputContrasenaRegistro.value);
-  let existe = usuarios.find(user => user.nombre == usuarioNuevo.nombre);
-  if (existe) {
-    alert("Este nombre de usuario ya existe, intente con otro.");
+  if (inputUsuarioRegistro.value == " " || inputContrasenaRegistro.value == " "){
+    alert("Ingrese un valor válido");
   } else {
-    console.log(usuarioNuevo);
-    usuarios.push(usuarioNuevo);
-    console.log(usuarios);
-    localStorage.setItem(`usuarios`, JSON.stringify(usuarios));
-    inputUsuarioSesion.value = inputUsuarioRegistro.value;
-    inputContrasenaSesion.value = inputContrasenaRegistro.value;
-    alert("Se creó el usuario, inicie sesión.");
-    inputUsuarioRegistro.value = "";
-    inputContrasenaRegistro.value = "";
+    const usuarioNuevo = new Usuario(Math.floor(Math.random() * 1000), inputUsuarioRegistro.value, inputContrasenaRegistro.value);
+    let existe = usuarios.find(user => user.nombre == usuarioNuevo.nombre);
+    existe ? alert("Este nombre de usuario ya existe, intente con otro.") : crearUsuario(usuarioNuevo);
   }
 });
 
@@ -41,9 +43,11 @@ let inputContrasenaSesion = document.querySelector("#sesion-contrasena");
 
 formSesion.addEventListener("submit", function(e){
   e.preventDefault();
-  let usuarioObjeto = usuarios.find(item => item.nombre == inputUsuarioSesion.value);
+  let usuarioObjeto = usuarios.find(item => item.nombre == inputUsuarioSesion.value && item.contrasena == inputContrasenaSesion.value);
   let user = JSON.stringify(usuarioObjeto);
-  if (inputUsuarioSesion.value === usuarioObjeto.nombre && inputContrasenaSesion.value === usuarioObjeto.contrasena){
+  if (usuarioObjeto == undefined) {
+    alert("Usuario y/o contraseña incorrectos.");
+  } else if (inputUsuarioSesion.value === usuarioObjeto.nombre && inputContrasenaSesion.value === usuarioObjeto.contrasena){
     sessionStorage.setItem("usuario activo", user);
     window.location = "notas.html";
   }
