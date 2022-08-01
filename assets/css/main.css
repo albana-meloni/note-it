@@ -119,14 +119,17 @@ select {
     cursor: pointer; }
     .container-notes .note span {
       color: #00cc00;
-      font-size: 1rem; }
+      font-size: 1rem;
+      pointer-events: none; }
     .container-notes .note .note-title {
+      pointer-events: none;
       font-size: 15px;
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: space-around; }
     .container-notes .note .note-body {
+      pointer-events: none;
       font-size: 13px;
       color: #555555;
       margin: 1rem 0;
@@ -135,6 +138,7 @@ select {
       overflow: hidden;
       text-overflow: ellipsis; }
     .container-notes .note .note-bottom {
+      pointer-events: none;
       width: 100%;
       display: flex;
       flex-direction: row;

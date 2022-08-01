@@ -14,12 +14,15 @@
     span {
       color: map-get($colores, acento);
       font-size: 1rem;
+      pointer-events: none;
     }
     .note-title {
+      pointer-events: none;
       font-size: 15px;
       @include flex(row, center, space-around);
     }
     .note-body {
+      pointer-events: none;
       font-size: 13px;
       color: map-get($colores, gris);
       margin: 1rem 0;
@@ -29,6 +32,7 @@
       text-overflow: ellipsis;
     }
     .note-bottom {
+      pointer-events: none;
       width: 100%;
       @include flex(row, center, space-between);
       small {

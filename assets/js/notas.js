@@ -8,6 +8,7 @@ let containerNotas = document.querySelector(".container-notes");
 notas.forEach((nota) => {
   let div = document.createElement("div");
   div.className = "note";
+  div.id = nota.id;
   div.innerHTML = `
   <div class="note-title">
     <span><</span>
@@ -26,5 +27,8 @@ notas.forEach((nota) => {
   let abrirNotaBtn = document.querySelector(".abrir-nota");
   let eliminarNotaBtn = document.querySelector(".eliminar-nota");
 
-  div.addEventListener("click", () => window.location = "./nota-individual.html");
+  div.addEventListener("click", (e) => {
+    sessionStorage.setItem('nota-user', e.target.id);
+    window.location = "./nota-individual.html";
+  });
 });
