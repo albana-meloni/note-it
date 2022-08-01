@@ -1,12 +1,12 @@
-.input, .container-inputs .input, .container-btn > form > input {
+.input, .container-inputs .input, .input--nota, .container-btn > form > input {
   background-color: transparent;
   border: 0;
   resize: none;
   border-bottom: 1.5px solid #777777; }
-  .input::placeholder, .container-inputs .input::placeholder, .container-btn > form > input::placeholder {
+  .input::placeholder, .container-inputs .input::placeholder, .input--nota::placeholder, .container-btn > form > input::placeholder {
     font-style: italic;
     font-size: 0.8rem; }
-  .input:focus, .container-btn > form > input:focus {
+  .input:focus, .input--nota:focus, .container-btn > form > input:focus {
     outline: none;
     color: #00cc00; }
 
@@ -115,7 +115,8 @@ select {
     width: 100%;
     margin-bottom: 1rem;
     background-color: #f5f5f5;
-    padding: 0.5rem; }
+    padding: 0.5rem;
+    cursor: pointer; }
     .container-notes .note span {
       color: #00cc00;
       font-size: 1rem; }
@@ -141,39 +142,7 @@ select {
       justify-content: space-between; }
       .container-notes .note .note-bottom small {
         font-size: 10px;
-        color: #00cc00;
-        cursor: pointer; }
-        .container-notes .note .note-bottom small:not([class]) {
-          color: #000000;
-          cursor: default; }
-
-.modal-note {
-  height: 80vh;
-  width: 80vw;
-  margin: 10vh 10vw;
-  z-index: 999;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 1rem;
-  background-color: #ffffff;
-  border: 2px solid #000000;
-  box-shadow: 0 0 0 500px rgba(0, 0, 0, 0.8);
-  transition: all 500ms ease;
-  opacity: 1; }
-  .modal-note div {
-    display: flex;
-    flex-direction: row;
-    align-items: normal;
-    justify-content: space-between;
-    width: 100%; }
-  .modal-note small {
-    cursor: pointer;
-    font-size: 1.2rem; }
+        color: #777777; }
 
 /* crear nota */
 .container-inputs {
@@ -183,7 +152,7 @@ select {
   justify-content: center;
   width: 100%;
   height: 100%; }
-  .container-inputs .input, .container-inputs .container-btn > form > input {
+  .container-inputs .input, .container-inputs .input--nota, .container-inputs .container-btn > form > input {
     width: 100%;
     margin: 0 auto 1rem; }
 
@@ -194,6 +163,20 @@ form#crearNota {
   justify-content: center;
   width: 100%;
   height: 100%; }
+
+/* nota individual */
+.input--nota {
+  border: none; }
+
+input.input--nota {
+  width: 100%; }
+
+textarea.input--nota {
+  width: 100%;
+  height: calc(100vh - 15rem); }
+
+#note-close {
+  cursor: pointer; }
 
 .container-folders {
   display: grid;

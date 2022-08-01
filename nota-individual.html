@@ -5,10 +5,29 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>nOte It | nOta</title>
+  <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 <body>
-  <div class="container">
-    
+  <div class="container" id="container__nota-ind">
+    <div>
+      <div class="heading">
+        <div>
+          <input type="text" id="note-title" class="input--nota" disabled>
+        </div>
+        <div>
+          <p id="note-close">x</p>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div>
+      <textarea id="note-body" class="input--nota" disabled></textarea>
+    </div>
+    <div class="bottom">
+      <hr>
+      <button class="btn" id="note-delete">#borrar</button>
+    </div>
   </div>
+  <script src="./assets/js/nota-ind.js"></script>
 </body>
 </html>

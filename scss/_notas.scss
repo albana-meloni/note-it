@@ -10,6 +10,7 @@
     margin-bottom: 1rem;
     background-color: map-get($colores, blanco-oscuro);
     padding: 0.5rem;
+    cursor: pointer;
     span {
       color: map-get($colores, acento);
       font-size: 1rem;
@@ -32,39 +33,9 @@
       @include flex(row, center, space-between);
       small {
         font-size: 10px;
-        color: map-get($colores, acento);
-        cursor: pointer;
-        &:not([class]) {
-          color: map-get($colores, negro);
-          cursor: default;
-        }
+        color: map-get($colores, gris-claro);
       }
     }
-  }
-}
-
-.modal-note {
-  height: 80vh;
-  width: 80vw;
-  margin: 10vh 10vw;
-  z-index: 999;
-  position: fixed;
-  top: 0;
-  left: 0;
-  @include flex(column, center, flex-start);
-  padding: 1rem;
-  background-color: map-get($colores, blanco);
-  border: 2px solid map-get($colores, negro);
-  box-shadow: 0 0 0 500px rgba(0,0,0,0.8);
-  transition: all 500ms ease;
-  opacity: 1;
-  div {
-    @include flex(row, normal, space-between);
-    width: 100%;
-  }
-  small {
-    cursor: pointer;
-    font-size: 1.2rem;
   }
 }
 
@@ -84,4 +55,21 @@ form#crearNota {
   @include flex(column, normal, center);
   width: 100%;
   height: 100%;
+}
+
+
+/* nota individual */
+.input--nota {
+  @extend .input;
+  border: none;
+}
+input.input--nota {
+  width: 100%;
+}
+textarea.input--nota {
+  width: 100%;
+  height: calc(100vh - 15rem);
+}
+#note-close {
+  cursor: pointer;
 }
