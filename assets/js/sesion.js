@@ -36,10 +36,10 @@ let inputContrasenaRegistro = document.querySelector("#registro-contrasena");
 formRegistro.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  if (inputUsuarioRegistro.value == " " || inputContrasenaRegistroinputUsuarioRegistro.value == " ") {
+  if (inputUsuarioRegistro.value == " " || inputContrasenaRegistro.value == " ") {
     alert("Ingrese un valor válido");
   } else {
-    const usuarioNuevo = new Usuario(Math.floor(Math.random() * 1000), inputUsuario, inputContrasena);
+    const usuarioNuevo = new Usuario(Math.floor(Math.random() * 1000), inputUsuarioRegistro.value, inputContrasenaRegistro.value);
     let existe = usuarios.find((user) => user.nombre == usuarioNuevo.nombre);
     existe ? alert("Este nombre de usuario ya existe, intente con otro.") : crearUsuario(usuarioNuevo);
   }
