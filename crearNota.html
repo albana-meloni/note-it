@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="La app web para hacer las cosas más fáciles para los desarrolladores. No te pierdas de nada, organizate de la mejor manera ;)">
   <title>nOte It | crear nOta</title>
+
+  <!-- editor de texto -->
+  <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 <body>
@@ -22,14 +25,16 @@
       <hr>
     </div>
     <form id="crearNota">
-      <div class="container-inputs">
-        <input type="text" class="input" id="inputTitulo" placeholder="Escriba el título" maxlength="22" autocomplete="off" required>
-        <textarea class="input" id="inputContenido" rows="9" placeholder="Escriba el contenido" required></textarea>
+      <input type="text" class="input" id="inputTitulo" placeholder="Escriba el título..." maxlength="22" autocomplete="off" required>
+      <div class="container-quill">
       </div>
+      <hr>
       <button type="submit" class="btn" id="crearNotaBtn">/guardar</button>
     </form>
   </div>
 
+  <!-- editor de texto -->
+  <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
   <script src="./assets/js/crearNota.js"></script>
 </body>
 </html>

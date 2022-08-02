@@ -12,9 +12,17 @@ tituloDOM.value = carpetaActual.nombre
 
 let borrar = document.querySelector("#folder-delete");
 borrar.addEventListener("click", ()=> {
-  confirm("Se eliminará la carpeta");
   let index = carpetasJSON.indexOf(carpetaActual);
   carpetasJSON.splice(index, 1);
   localStorage.setItem(`carpetas de usuario #${usuarioJSON.id}`, JSON.stringify(carpetasJSON));
-  window.location = "./carpetas.html";
+  Toastify({
+    text: "Click para confirmar",
+    duration: 5000,
+    gravity: "top",
+    position: "right",
+    destination: "/carpetas.html",
+    style: {
+      background: "#000000"
+    }
+  }).showToast();
 });

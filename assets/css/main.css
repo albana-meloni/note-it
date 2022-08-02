@@ -1,12 +1,12 @@
-.input, .container-inputs .input, .input--nota, .container-btn > form > input {
+.input, #crearNota .input, .input--nota, .container-btn > form > input {
   background-color: transparent;
   border: 0;
   resize: none;
   border-bottom: 1.5px solid #777777; }
-  .input::placeholder, .container-inputs .input::placeholder, .input--nota::placeholder, .container-btn > form > input::placeholder {
+  .input::placeholder, #crearNota .input::placeholder, .input--nota::placeholder, .container-btn > form > input::placeholder {
     font-style: italic;
     font-size: 0.8rem; }
-  .input:focus, .input--nota:focus, .container-btn > form > input:focus {
+  .input:focus, #crearNota .input:focus, .input--nota:focus, .container-btn > form > input:focus {
     outline: none;
     color: #00cc00; }
 
@@ -149,16 +149,12 @@ select {
         color: #777777; }
 
 /* crear nota */
-.container-inputs {
-  display: flex;
-  flex-direction: column;
-  align-items: normal;
-  justify-content: center;
+#crearNota .input, #crearNota .input--nota, #crearNota .container-btn > form > input {
   width: 100%;
-  height: 100%; }
-  .container-inputs .input, .container-inputs .input--nota, .container-inputs .container-btn > form > input {
-    width: 100%;
-    margin: 0 auto 1rem; }
+  margin: 0 auto 1rem; }
+
+#crearNota .ql-editor {
+  font-family: "OCRA"; }
 
 form#crearNota {
   display: flex;
@@ -169,6 +165,9 @@ form#crearNota {
   height: 100%; }
 
 /* nota individual */
+#note-body {
+  text-align: left; }
+
 .input--nota {
   border: none; }
 

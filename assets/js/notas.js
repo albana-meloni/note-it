@@ -1,26 +1,33 @@
+let usuarioJSON = JSON.parse(sessionStorage.getItem("usuario activo"));
+const {nombre, id} = usuarioJSON;
 let titulo = document.querySelector("#user-title");
 titulo.innerHTML = `nOtas de <strong>${nombre}</strong><small>#${id}</small>`;
 
 /* cuando se crea una nota */
-const hoy = new Date();
+let DateTime = luxon.DateTime;
+const dt = DateTime.now();
 let containerNotas = document.querySelector(".container-notes");
 
-notas.forEach((nota) => {
+let notasJSON = JSON.parse(localStorage.getItem(`notas de usuario #${id}`));
+
+notasJSON.forEach((nota) => {
+  let {id, titulo, contenido, texto} = nota;
+
   let div = document.createElement("div");
   div.className = "note";
-  div.id = nota.id;
+  div.id = id;
   div.innerHTML = `
   <div class="note-title">
     <span><</span>
-    <h3>${nota.titulo}</h3>
+    <h3>${titulo}</h3>
     <span>/></span>
   </div>
   <p class="note-body">
     <span>//</span>
-    ${nota.contenido}
+    ${texto}
   </p>
   <div class="note-bottom">
-    <small>${hoy.toLocaleDateString()}</small>
+    <small>${dt.toLocaleString(DateTime.DATETIME_MED)}</small>
   </div>
   `;
   containerNotas.appendChild(div);

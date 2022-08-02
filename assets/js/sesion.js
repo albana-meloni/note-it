@@ -10,23 +10,32 @@ class Usuario {
   }
 }
 
+function toast(text, color) {
+  Toastify({
+    text: text,
+    duration: 3000,
+    gravity: "top",
+    position: "right",
+    style: {
+      background: color
+    }
+  }).showToast();
+}
+
 function crearUsuario(usuario) {
   usuarios.push(usuario);
   localStorage.setItem(`usuarios`, JSON.stringify(usuarios));
   inputUsuarioSesion.value = inputUsuarioRegistro.value;
   inputContrasenaSesion.value = inputContrasenaRegistro.value;
-  alert("Se creó el usuario, inicie sesión.");
+  toast("Usuario creado", "#00cc00");
   inputUsuarioRegistro.value = "";
   inputContrasenaRegistro.value = "";
 }
 
 function mostrarContrasena(input) {
-  if (input.type == "password") {
-    input.type = "text";
-  } else {
-    input.type = "password";
-  }
+  input.type == "password" ? input.type = "text" : input.type = "password";
 }
+
 
 // registro
 let formRegistro = document.querySelector("#registro");
@@ -37,11 +46,11 @@ formRegistro.addEventListener("submit", function (e) {
   e.preventDefault();
 
   if (inputUsuarioRegistro.value == " " || inputContrasenaRegistro.value == " ") {
-    alert("Ingrese un valor válido");
+    toast("Valor inválido", "#000000")
   } else {
     const usuarioNuevo = new Usuario(Math.floor(Math.random() * 1000), inputUsuarioRegistro.value, inputContrasenaRegistro.value);
     let existe = usuarios.find((user) => user.nombre == usuarioNuevo.nombre);
-    existe ? alert("Este nombre de usuario ya existe, intente con otro.") : crearUsuario(usuarioNuevo);
+    existe ? toast("Nombre de usuario existente", "#000000") : crearUsuario(usuarioNuevo);
   }
 });
 let mostrar1 = document.querySelector("#ojo1");
@@ -60,7 +69,7 @@ formSesion.addEventListener("submit", function (e) {
   let usuarioObjeto = usuarios.find((item) => item.nombre == inputUsuarioSesion.value && item.contrasena == inputContrasenaSesion.value);
   let user = JSON.stringify(usuarioObjeto);
 
-  usuarioObjeto === undefined && alert("Usuario y/o contraseña incorrectos.");
+  usuarioObjeto === undefined && toast("Usuario y/o contraseña incorrectos", "#000000");
   if (inputUsuarioSesion.value === usuarioObjeto.nombre && inputContrasenaSesion.value === usuarioObjeto.contrasena){
     sessionStorage.setItem("usuario activo", user);
     window.location = "./notas.html";

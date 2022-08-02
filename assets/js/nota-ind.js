@@ -13,18 +13,26 @@ let notaUser = sessionStorage.getItem('nota-user');
 let notaActual = notasJSON.find(item => item.id == notaUser);
 
 tituloDOM.value = notaActual.titulo;
-contenidoDOM.value = notaActual.contenido;
+contenidoDOM.innerHTML = notaActual.contenido;
 
 // cerrar pestaña
 cerrar.addEventListener("click", () => window.location = "./notas.html");
 
 // borrar
 borrar.addEventListener("click", ()=> {
-  confirm("Se eliminará la nota");
   let index = notasJSON.indexOf(notaActual);
   notasJSON.splice(index, 1);
   localStorage.setItem(`notas de usuario #${usuarioJSON.id}`, JSON.stringify(notasJSON));
-  window.location = "./notas.html";
+  Toastify({
+    text: "Click para confirmar",
+    duration: 5000,
+    gravity: "top",
+    position: "right",
+    destination: "/notas.html",
+    style: {
+      background: "#000000"
+    }
+  }).showToast();
 });
 
 // mover a carpeta

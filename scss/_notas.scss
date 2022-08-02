@@ -44,14 +44,14 @@
 }
 
 /* crear nota */
-.container-inputs {
-  @include flex(column, normal, center);
-  width: 100%;
-  height: 100%;
+#crearNota {
   .input {
     @extend .input;
     width: 100%;
     margin: 0 auto 1rem;
+  }
+  .ql-editor {
+    font-family: "OCRA";
   }
 }
 
@@ -63,6 +63,9 @@ form#crearNota {
 
 
 /* nota individual */
+#note-body {
+  text-align: left;
+}
 .input--nota {
   @extend .input;
   border: none;
