@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>nOte It | nOta</title>
+  <title>nOte It | carpeta</title>
   <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 <body>
@@ -12,23 +12,23 @@
     <div>
       <div class="heading">
         <div>
-          <input type="text" id="note-title" class="input--nota" disabled>
+          <input type="text" class="input--nota" id="input-carpeta" disabled>
         </div>
         <div>
-          <p id="note-close">x</p>
+          <a href="./carpetas.html"><img src="./assets/img/folders.svg" alt="Imagen vectorial de carpeta"></a>
         </div>
       </div>
       <hr>
     </div>
-    <div>
-      <textarea id="note-body" class="input--nota" disabled></textarea>
+    <p id="vacia">Esta carpeta está vacía...</p>
+    <div class="container-notas">
+
     </div>
     <div class="bottom">
       <hr>
-      <button class="btn" id="note-delete">#eliminar</button>
-      <button class="btn" id="note-move">%mover</button>
+      <button class="btn" id="folder-delete">#eliminar</button>
     </div>
   </div>
-  <script src="./assets/js/nota-ind.js"></script>
+  <script src="./assets/js/carpeta-ind.js"></script>
 </body>
 </html>

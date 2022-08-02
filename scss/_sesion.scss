@@ -5,6 +5,14 @@ form#sesion {
     margin-top: 0.5rem;
     text-align: left;
     font-size: 0.9rem;
+    position: relative;
+    .ojo {
+      position: absolute;
+      width: 20px;
+      cursor: pointer;
+      bottom: 25px;
+      right: 5px;
+    }
     input {
       width: 100%;
       margin: 0 auto 1rem;
@@ -33,3 +41,4 @@ form#sesion {
     }
   }
 }
+

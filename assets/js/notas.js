@@ -1,5 +1,5 @@
 let titulo = document.querySelector("#user-title");
-titulo.innerHTML = `nOtas de <strong>${usuarioJSON.nombre}</strong><small>#${usuarioJSON.id}</small>`;
+titulo.innerHTML = `nOtas de <strong>${nombre}</strong><small>#${id}</small>`;
 
 /* cuando se crea una nota */
 const hoy = new Date();
@@ -24,8 +24,6 @@ notas.forEach((nota) => {
   </div>
   `;
   containerNotas.appendChild(div);
-  let abrirNotaBtn = document.querySelector(".abrir-nota");
-  let eliminarNotaBtn = document.querySelector(".eliminar-nota");
 
   div.addEventListener("click", (e) => {
     sessionStorage.setItem('nota-user', e.target.id);

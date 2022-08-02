@@ -68,7 +68,7 @@ select {
   backdrop-filter: blur(3px);
   box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
   margin: 1.5rem;
-  padding: 1rem;
+  padding: 1.5rem;
   height: calc(100vh - 4rem);
   overflow: hidden;
   display: flex;
@@ -173,14 +173,19 @@ form#crearNota {
   border: none; }
 
 input.input--nota {
-  width: 100%; }
+  width: 100%;
+  font-weight: bold;
+  font-size: 1.2rem; }
 
 textarea.input--nota {
   width: 100%;
   height: calc(100vh - 15rem); }
 
 #note-close {
-  cursor: pointer; }
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #00cc00; }
 
 .container-folders {
   display: grid;
@@ -201,7 +206,10 @@ textarea.input--nota {
     align-items: center;
     justify-content: center;
     position: relative;
-    font-size: 0.9rem; }
+    cursor: pointer; }
+    .container-folders .folder p {
+      font-size: 0.9rem;
+      pointer-events: none; }
     .container-folders .folder::after {
       content: '';
       width: 20px;
@@ -209,7 +217,8 @@ textarea.input--nota {
       background-color: #00cc00;
       position: absolute;
       top: -5px;
-      right: 0; }
+      right: 0;
+      pointer-events: none; }
 
 /* crear carpeta */
 .container-btn {
@@ -237,7 +246,15 @@ form#sesion {
   form#sesion label {
     margin-top: 0.5rem;
     text-align: left;
-    font-size: 0.9rem; }
+    font-size: 0.9rem;
+    position: relative; }
+    form#registro label .ojo,
+    form#sesion label .ojo {
+      position: absolute;
+      width: 20px;
+      cursor: pointer;
+      bottom: 25px;
+      right: 5px; }
     form#registro label input,
     form#sesion label input {
       width: 100%;
