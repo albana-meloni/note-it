@@ -14,6 +14,9 @@
   & > div {
     width: 100%;
   }
+  .div-ind {
+    height: 80%;
+  }
   .heading {
     @include flex(row, center, space-between);
     width: 100%;
@@ -51,6 +54,20 @@
     &:hover,
     &:focus {
       color: map-get($colores, acento);
+    }
+  }
+  .bottom {
+    div {
+      @include flex (row, center, space-between);
+      
+    }
+    form {
+      @include flex (row, center, center);
+      width: 55%;
+      margin: 0.5rem;
+      input {
+        width: 100%;
+      }
     }
   }
 }

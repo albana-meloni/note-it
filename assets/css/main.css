@@ -80,6 +80,8 @@ select {
     font-size: 2.3rem; }
   .container > div {
     width: 100%; }
+  .container .div-ind {
+    height: 80%; }
   .container .heading {
     display: flex;
     flex-direction: row;
@@ -112,6 +114,20 @@ select {
     color: #ffffff; }
     .container .btn:hover, .container .btn:focus {
       color: #00cc00; }
+  .container .bottom div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; }
+  .container .bottom form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 55%;
+    margin: 0.5rem; }
+    .container .bottom form input {
+      width: 100%; }
 
 #tasks .btn {
   width: 100%;
@@ -171,20 +187,29 @@ select {
   width: 100%;
   margin: 0 auto 1rem; }
 
-#crearNota .ql-editor {
-  font-family: "OCRA"; }
+#crearNota .ql-container {
+  overflow: scroll;
+  height: calc(100% - 13rem); }
+  #crearNota .ql-container::-webkit-scrollbar {
+    display: none; }
+  #crearNota .ql-container .ql-editor {
+    font-family: "OCRA"; }
 
 form#crearNota {
   display: flex;
   flex-direction: column;
   align-items: normal;
-  justify-content: center;
+  justify-content: normal;
   width: 100%;
   height: 100%; }
 
 /* nota individual */
 #note-body {
-  text-align: left; }
+  text-align: left;
+  overflow: scroll;
+  height: 100%; }
+  #note-body::-webkit-scrollbar {
+    display: none; }
 
 .input--nota {
   border: none; }

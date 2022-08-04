@@ -12,13 +12,13 @@
 </head>
 <body>
   <div class="container">
-    <div>
+    <div class="div-ind">
       <div class="heading">
         <div>
-          <input type="text" id="note-title" class="input--nota" readonly>
+          <input type="text" id="note-title" class="input--nota" disabled>
         </div>
         <div>
-          <p id="note-close">x</p>
+          <small id="note-close">x</small>
         </div>
       </div>
       <hr>
@@ -28,8 +28,13 @@
     </div>
     <div class="bottom">
       <hr>
-      <button class="btn" id="note-delete">#eliminar</button>
-      <button class="btn" id="note-move">%mover</button>
+      <div>
+        <button class="btn" id="note-delete">#borrar</button>
+        <form for="note-move" id="form__note-move">
+          <input type="text" class="input" id="nombre-carpeta" maxlength="11" placeholder="Nombre de carpeta" autocomplete="off">
+          <button class="btn" id="note-move">%mover</button>
+        </form>
+      </div>
     </div>
   </div>
 

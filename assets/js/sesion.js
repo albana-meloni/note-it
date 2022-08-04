@@ -32,8 +32,14 @@ function crearUsuario(usuario) {
   inputContrasenaRegistro.value = "";
 }
 
-function mostrarContrasena(input) {
-  input.type == "password" ? input.type = "text" : input.type = "password";
+function mostrarContrasena(img, input) {
+  if (input.type == "password"){
+    input.type = "text";
+    img.src = "./assets/img/ojo-verde.svg";
+  } else {
+    input.type = "password";
+    img.src = "./assets/img/ojo.svg";
+  }
 }
 
 
@@ -54,7 +60,7 @@ formRegistro.addEventListener("submit", function (e) {
   }
 });
 let mostrar1 = document.querySelector("#ojo1");
-mostrar1.addEventListener("click", () => mostrarContrasena(inputContrasenaRegistro));
+mostrar1.addEventListener("click", () => mostrarContrasena(mostrar1, inputContrasenaRegistro));
 
 
 
@@ -76,4 +82,4 @@ formSesion.addEventListener("submit", function (e) {
   }
 });
 let mostrar2 = document.querySelector("#ojo2");
-mostrar2.addEventListener("click", () => mostrarContrasena(inputContrasenaSesion));
+mostrar2.addEventListener("click", () => mostrarContrasena(mostrar2, inputContrasenaSesion));
