@@ -7,11 +7,12 @@ let notesLS = JSON.parse(localStorage.getItem(`notas de usuario #${id}`)) || [];
 notesLS.forEach(element => notas.push(element));
 
 class Nota {
-  constructor(id, titulo, contenido, texto) {
+  constructor(id, titulo, contenido, texto, hora) {
     this.id = id;
     this.titulo = titulo;
     this.contenido = contenido;
     this.texto = texto;
+    this.hora = hora;
   }
 }
 
@@ -34,6 +35,8 @@ let options = {
 
 let contenedor = document.querySelector(".container-quill");
 let editor = new Quill(contenedor, options);
+let DateTime = luxon.DateTime;
+let dt = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
 
 
 let crearNotaForm = document.querySelector("#crearNota");
@@ -42,7 +45,7 @@ crearNotaForm.addEventListener("submit", function(e) {
   let titulo = document.querySelector("#inputTitulo").value;
   let contenido = document.querySelector(".ql-editor").innerHTML;
   let txt = document.querySelector(".ql-editor").innerText;
-  const notaNueva = new Nota(idNota, titulo, contenido, txt);
+  const notaNueva = new Nota(idNota, titulo, contenido, txt, dt);
   notas.push(notaNueva);
   localStorage.setItem(`notas de usuario #${id}`, JSON.stringify(notas));
   window.location = "./notas.html";

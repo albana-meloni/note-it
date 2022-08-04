@@ -4,14 +4,12 @@ let titulo = document.querySelector("#user-title");
 titulo.innerHTML = `nOtas de <strong>${nombre}</strong><small>#${id}</small>`;
 
 /* cuando se crea una nota */
-let DateTime = luxon.DateTime;
-const dt = DateTime.now();
 let containerNotas = document.querySelector(".container-notes");
 
 let notasJSON = JSON.parse(localStorage.getItem(`notas de usuario #${id}`));
 
 notasJSON.forEach((nota) => {
-  let {id, titulo, contenido, texto} = nota;
+  let {id, titulo, contenido, texto, hora} = nota;
 
   let div = document.createElement("div");
   div.className = "note";
@@ -27,7 +25,7 @@ notasJSON.forEach((nota) => {
     ${texto}
   </p>
   <div class="note-bottom">
-    <small>${dt.toLocaleString(DateTime.DATETIME_MED)}</small>
+    <small>${hora}</small>
   </div>
   `;
   containerNotas.appendChild(div);
