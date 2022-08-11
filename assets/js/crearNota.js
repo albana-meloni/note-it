@@ -50,5 +50,3 @@ crearNotaForm.addEventListener("submit", function(e) {
   localStorage.setItem(`notas de usuario #${id}`, JSON.stringify(notas));
   window.location = "./notas.html";
 });
-
-
