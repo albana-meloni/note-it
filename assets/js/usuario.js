@@ -10,28 +10,14 @@ emailForm.addEventListener("submit", function (e) {
   const {id, nombre, contrasena, mail} = usuarioEmail;
   inputEmail.value = "";
 
-/*   emailjs.send("service_noteIt", "backup_mail",{
+  emailjs.send("service_noteIt", "backup_mail",{
     email: `"${mail}"`,
     usuario: `"${nombre}"`,
     id: `"${id}"`,
     contrasena: `"${contrasena}"`,
-  }) */
-
-  fetch('https://jsonplaceholder.typicode.com/posts', {
-        method: 'POST',
-        body: JSON.stringify({
-            title: 'Coderhouse',
-            body: 'Post de prueba',
-            userId: 1,
-        }),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-        },
-    })
-    .then((response) => response.json())
-    .then((data) => console.log(data));
+  })
   
-/*   Toastify({
+  Toastify({
     text: "Email adjunto!",
     duration: 3000,
     gravity: "top",
@@ -39,5 +25,5 @@ emailForm.addEventListener("submit", function (e) {
     style: {
       background: "#00cc00"
     }
-  }).showToast(); */
+  }).showToast();
 });
