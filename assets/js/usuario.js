@@ -16,7 +16,6 @@ emailForm.addEventListener("submit", function (e) {
     id: `"${id}"`,
     contrasena: `"${contrasena}"`,
   })
-  
   Toastify({
     text: "Email adjunto!",
     duration: 3000,
