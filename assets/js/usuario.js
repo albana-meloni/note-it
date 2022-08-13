@@ -7,22 +7,28 @@ emailForm.addEventListener("submit", function (e) {
   e.preventDefault();
   let inputEmail = document.querySelector("#email-input");
   const usuarioEmail = { ...usuarioJSON, mail: inputEmail.value };
-  const {id, nombre, contrasena, mail} = usuarioEmail;
+  const { id, nombre, contrasena, mail } = usuarioEmail;
   inputEmail.value = "";
 
-  emailjs.send("service_noteIt", "backup_mail",{
-    email: `"${mail}"`,
-    usuario: `"${nombre}"`,
-    id: `"${id}"`,
-    contrasena: `"${contrasena}"`,
+  fetch("https://jsonplaceholder.typicode.com/posts", {
+    method: "POST",
+    body: JSON.stringify(usuarioEmail),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
   })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      document.querySelector("#id-mail").innerHTML = `${data.mail}`;
+    });
   Toastify({
     text: "Email adjunto!",
     duration: 3000,
     gravity: "top",
     position: "right",
     style: {
-      background: "#00cc00"
-    }
+      background: "#00cc00",
+    },
   }).showToast();
 });
