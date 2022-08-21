@@ -21,7 +21,7 @@ borrar.addEventListener("click", ()=> {
     duration: 5000,
     gravity: "top",
     position: "right",
-    destination: "/carpetas.html",
+    destination: "https://albana-meloni.github.io/note-it/carpetas.html",
     style: {
       background: "#000000"
     }
