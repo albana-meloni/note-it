@@ -32,7 +32,7 @@ borrar.addEventListener("click", ()=> {
 // mostrar notas
 let mensaje = document.querySelector("#vacia");
 let contenidoCarpeta = JSON.parse(localStorage.getItem(`carpeta ${carpetaActual.nombre} de usuario ${id}`)) || [];
-contenidoCarpeta ? mostrar() : mensaje.innerHTML = "Esta carpeta está vacía...";
+contenidoCarpeta && mostrar()
 console.log(contenidoCarpeta);
 
 function mostrar() {
